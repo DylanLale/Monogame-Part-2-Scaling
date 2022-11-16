@@ -9,9 +9,17 @@ namespace Monogame_Part_2___Scaling
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        Texture2D circleTexture;
+        Rectangle circleRect;
+
+        Texture2D rectangleTexture;
+        Rectangle rectangleRect;
+
+        SpriteFont titlefont;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
+            
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -19,7 +27,11 @@ namespace Monogame_Part_2___Scaling
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            _graphics.PreferredBackBufferWidth = 800;
+            _graphics.PreferredBackBufferHeight = 500;
+            rectangleRect = new Rectangle(10, 10, 40, 40);
+            circleRect = new Rectangle(125, 0, 475, 475);
+            
             base.Initialize();
         }
 
@@ -28,6 +40,12 @@ namespace Monogame_Part_2___Scaling
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+            titlefont = Content.Load<SpriteFont>("TitleFont");
+            rectangleTexture = Content.Load<Texture2D>("rectangle");
+            circleTexture = Content.Load<Texture2D>("circle");
+
+
+
         }
 
         protected override void Update(GameTime gameTime)
@@ -42,9 +60,15 @@ namespace Monogame_Part_2___Scaling
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
+
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(circleTexture, circleRect, Color.Yellow);
+           
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
