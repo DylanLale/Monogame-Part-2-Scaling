@@ -78,6 +78,7 @@ namespace Monogame_Part_2___Scaling
             _spriteBatch.Draw(rectangleTexture, smileRect, Color.Black);
             _spriteBatch.Draw(rectangleTexture, eyeRect1, Color.Black);
             _spriteBatch.Draw(rectangleTexture, eyeRect2, Color.Black);
+            _spriteBatch.DrawString(titlefont, "My mood right now:", new Vector2(10, 10), Color.White);
 
             _spriteBatch.End();
 
