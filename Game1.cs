@@ -15,6 +15,12 @@ namespace Monogame_Part_2___Scaling
         Texture2D rectangleTexture;
         Rectangle rectangleRect;
 
+        Rectangle smileRect;
+
+        Rectangle eyeRect1;
+
+        Rectangle eyeRect2;
+
         SpriteFont titlefont;
         public Game1()
         {
@@ -31,7 +37,9 @@ namespace Monogame_Part_2___Scaling
             _graphics.PreferredBackBufferHeight = 500;
             rectangleRect = new Rectangle(10, 10, 40, 40);
             circleRect = new Rectangle(125, 0, 475, 475);
-            
+            smileRect = new Rectangle(220, 295, 275, 50);
+            eyeRect1 = new Rectangle(260, 150, 50, 50);
+            eyeRect2 = new Rectangle(410, 150, 50, 50);
             base.Initialize();
         }
 
@@ -65,8 +73,11 @@ namespace Monogame_Part_2___Scaling
             // TODO: Add your drawing code here
 
             _spriteBatch.Begin();
+
             _spriteBatch.Draw(circleTexture, circleRect, Color.Yellow);
-           
+            _spriteBatch.Draw(rectangleTexture, smileRect, Color.Black);
+            _spriteBatch.Draw(rectangleTexture, eyeRect1, Color.Black);
+            _spriteBatch.Draw(rectangleTexture, eyeRect2, Color.Black);
 
             _spriteBatch.End();
 
